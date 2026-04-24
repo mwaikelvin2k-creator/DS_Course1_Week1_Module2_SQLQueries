@@ -50,7 +50,7 @@ df_mass_moon = pd.read_sql("""
 df_blue = pd.read_sql("""
     SELECT name,color
     FROM planets
-    WHERE color = 'blue';
+    WHERE color LIKE "%blue%";
 """, conn1)
 
 # CodeGrade step0

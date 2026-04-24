@@ -25,7 +25,7 @@ df_no_moons = pd.read_sql("""
 df_name_seven = pd.read_sql("""
     SELECT name,mass
     FROM planets
-    WHERE name LIKE '_______';
+    WHERE LENGTH(name) = 7;
 """, conn1)
 
 # CodeGrade step3
@@ -144,7 +144,7 @@ df_hr_total = pd.read_sql("""
 df_teams_years = pd.read_sql("""
     SELECT 
             team,
-            COUNT(year)
+            COUNT(year) AS number_years
     FROM babe_ruth_stats
     GROUP BY team;
 """, conn3)
